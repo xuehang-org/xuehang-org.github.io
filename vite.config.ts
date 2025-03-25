@@ -12,7 +12,7 @@ export default defineConfig({
         vueDevTools(),
         tailwindcss(),
     ],
-    base: './',
+    base: 'https://xuehang.org/',
     resolve: {
         alias: {
             '@': fileURLToPath(new URL('./src', import.meta.url))
