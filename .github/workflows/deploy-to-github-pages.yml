@@ -29,7 +29,7 @@ jobs:
               run: npm run build  # 或 yarn build, pnpm build (根据你的构建脚本调整)
 
             - name: Upload production-ready build files
-              uses: actions/upload-artifact@v3
+              uses: actions/upload-pages-artifact@v3
               with:
                   name: production-files
                   path: ./dist  # Vue CLI 默认的输出目录，如果不同请修改
@@ -43,7 +43,6 @@ jobs:
 
         steps:
             - name: Deploy to GitHub Pages
-              uses: actions/deploy-pages@v2
+              uses: actions/deploy-pages@v4
               with:
                   artifact_name: production-files # name of the artifact to deploy
-                  static_site_generator: vue  # 可以不用加，会自动识别
