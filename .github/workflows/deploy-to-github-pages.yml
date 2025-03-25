@@ -25,6 +25,9 @@ jobs:
             - name: Build project
               run: npm run build  # 或 yarn build, pnpm build (根据你的构建脚本调整)
 
+            - name: Create 404.html
+              run: cp dist/index.html dist/404.html
+
             - name: Upload production-ready build files
               uses: actions/upload-pages-artifact@v3
               with:
